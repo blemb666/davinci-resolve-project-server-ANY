@@ -83,7 +83,7 @@ docker-compose --version
 # 📁 4. Скачивание репозитория
 
 ```bash
-git clone https://github.com/ВАШ_РЕПО/davinci-resolve-project-server-ANY.git
+git clone https://github.com/blemb666/davinci-resolve-project-server-ANY.git
 cd davinci-resolve-project-server-ANY
 ```
 
