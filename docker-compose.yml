@@ -1,0 +1,30 @@
+version: "3.8"
+
+services:
+  postgres:
+    image: postgres:13
+    container_name: dr_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: resolve_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: DaVinci
+      TZ: UTC
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+      - ./postgres-config:/etc/postgresql
+    ports:
+      - "5432:5432"  # пробрасываем порт наружу для внешних подключений
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: dr_pgadmin
+    restart: unless-stopped
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+      TZ: UTC
+    ports:
+      - "8080:80"
+    depends_on:
+      - postgres
