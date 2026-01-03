@@ -206,5 +206,3 @@ docker-compose down
 * macOS
 * Docker Swarm или Kubernetes
 * Авто-бэкапы
-
-Пиши — помогу!
